@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Process</title>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <header class="bg-blue-600 text-white shadow-lg">
+      <div class="container mx-auto px-4 py-6">
+        <h1 class="text-3xl font-bold">
+          Guide d'Installation et de Configuration
+        </h1>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+      <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-600">
+          1. Installation de l'IDE
+        </h2>
+        <ol class="list-decimal list-inside space-y-2">
+          <li>
+            Téléchargez Visual Studio Code depuis
+            <a
+              href="https://code.visualstudio.com/"
+              class="text-blue-500 hover:underline"
+              >le site officiel</a
+            >
+          </li>
+          <li>Exécutez l'installateur</li>
+          <li>
+            Suivez les instructions à l'écran pour compléter l'installation
+          </li>
+        </ol>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-600">
+          2. Extensions à installer
+        </h2>
+        <p class="mb-4">
+          Installez les extensions suivantes dans Visual Studio Code :
+        </p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <li class="bg-gray-50 p-4 rounded-md">
+            <h3 class="font-semibold">Auto Tag Rename</h3>
+          </li>
+          <li class="bg-gray-50 p-4 rounded-md">
+            <h3 class="font-semibold">Error Lens</h3>
+          </li>
+          <li class="bg-gray-50 p-4 rounded-md">
+            <h3 class="font-semibold">ESLint</h3>
+          </li>
+          <li class="bg-gray-50 p-4 rounded-md">
+            <h3 class="font-semibold">GraphQL : Language Feature Support</h3>
+          </li>
+          <li class="bg-gray-50 p-4 rounded-md">
+            <h3 class="font-semibold">Liquid</h3>
+          </li>
+          <li class="bg-gray-50 p-4 rounded-md">
+            <h3 class="font-semibold">Prettier - Code formatter</h3>
+          </li>
+          <li class="bg-gray-50 p-4 rounded-md">
+            <h3 class="font-semibold">Prettier ESLint Typescript Formatter</h3>
+          </li>
+          <li class="bg-gray-50 p-4 rounded-md">
+            <h3 class="font-semibold">Shopify Liquid</h3>
+          </li>
+          <li class="bg-gray-50 p-4 rounded-md">
+            <h3 class="font-semibold">Shopify Liquid Template Snippets</h3>
+          </li>
+          <li class="bg-gray-50 p-4 rounded-md">
+            <h3 class="font-semibold">Template String Converter</h3>
+          </li>
+        </ul>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-600">
+          3. Configuration de VS Code
+        </h2>
+        <p class="mb-4">
+          Pour ajouter ces configurations à votre fichier settings.json dans VS
+          Code, suivez ces étapes :
+        </p>
+        <ol class="list-decimal list-inside space-y-2 mb-4">
+          <li>Ouvrez VS Code</li>
+          <li>
+            Appuyez sur <kbd class="bg-gray-200 px-2 py-1 rounded">Cmd</kbd> +
+            <kbd class="bg-gray-200 px-2 py-1 rounded">Shift</kbd> +
+            <kbd class="bg-gray-200 px-2 py-1 rounded">P</kbd> (sur Mac) ou
+            <kbd class="bg-gray-200 px-2 py-1 rounded">Ctrl</kbd> +
+            <kbd class="bg-gray-200 px-2 py-1 rounded">Shift</kbd> +
+            <kbd class="bg-gray-200 px-2 py-1 rounded">P</kbd> (sur
+            Windows/Linux) pour ouvrir la palette de commandes
+          </li>
+          <li>Tapez "settings" dans la palette de commandes</li>
+          <li>Sélectionnez "Preferences: Open User Settings (JSON)"</li>
+          <li>
+            Dans le fichier JSON qui s'ouvre, ajoutez ou modifiez les
+            configurations suivantes :
+          </li>
+        </ol>
+        <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm">
+        <code>{
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "explicit",
+            "source.organizeImports": "explicit"
+          },
+          "emmet.triggerExpansionOnTab": true,
+          "typescript.updateImportsOnFileMove.enabled": "always",
+          "typescript.inlayHints.variableTypes.enabled": true,
+          "typescript.inlayHints.parameterTypes.enabled": true,
+          "typescript.inlayHints.parameterNames.enabled": "literals",
+          "[liquid]": {
+            "editor.defaultFormatter": "Shopify.theme-check-vscode",
+            "editor.formatOnSave": true
+          }
+        }</code>
+        </pre>
+        <p class="mt-4">
+          Ces configurations optimiseront votre environnement de développement
+          pour les extensions installées.
+        </p>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-600">
+          4. Snippets VS Code utiles
+        </h2>
+        <p class="mb-4">
+          Voici quelques snippets utiles que vous pouvez ajouter à VS Code pour
+          accélérer votre développement, en particulier pour les sections de
+          schéma Shopify Liquid :
+        </p>
+        <ol class="list-decimal list-inside space-y-2 mb-4">
+          <li>Ouvrez VS Code</li>
+          <li>
+            Appuyez sur <kbd class="bg-gray-200 px-2 py-1 rounded">Cmd</kbd> +
+            <kbd class="bg-gray-200 px-2 py-1 rounded">Shift</kbd> +
+            <kbd class="bg-gray-200 px-2 py-1 rounded">P</kbd> (sur Mac) ou
+            <kbd class="bg-gray-200 px-2 py-1 rounded">Ctrl</kbd> +
+            <kbd class="bg-gray-200 px-2 py-1 rounded">Shift</kbd> +
+            <kbd class="bg-gray-200 px-2 py-1 rounded">P</kbd> (sur
+            Windows/Linux)
+          </li>
+          <li>
+            Tapez "snippets" et sélectionnez "Preferences: Configure User
+            Snippets"
+          </li>
+          <li>
+            Choisissez "New Global Snippets file..." ou sélectionnez un fichier
+            de snippets existant pour le langage souhaité (par exemple,
+            liquid.json pour Liquid)
+          </li>
+          <li>Ajoutez les snippets suivants :</li>
+        </ol>
+
+        <div class="space-y-4">
+          <div>
+            <h3 class="font-semibold text-lg mb-2">
+              Snippet pour une nouvelle section schema :
+            </h3>
+            <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm">
+              <code>{
+                "New Section Schema": {
+                  "prefix": "newsection",
+                  "body": [
+                    "{% schema %}",
+                    "{",
+                    "  \"name\": \"${1:Section name}\",",
+                    "  \"settings\": [",
+                    "    $0",
+                    "  ],",
+                    "  \"presets\": [",
+                    "    {",
+                    "      \"name\": \"${2:$1}\",",
+                    "      \"category\": \"${3:Custom}\"",
+                    "    }",
+                    "  ]",
+                    "}",
+                    "{% endschema %}"
+                  ],
+                  "description": "Create a new section schema with presets"
+                }
+              }</code>
+            </pre>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">
+              Snippet pour un paramètre de texte :
+            </h3>
+            <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm">
+              <code>{
+                "Text Setting": {
+                  "prefix": "textsetting",
+                  "body": [
+                    "{",
+                    "  \"type\": \"text\",",
+                    "  \"id\": \"${1:text_id}\",",
+                    "  \"label\": \"${2:Text Label}\",",
+                    "  \"default\": \"${3:Default Text}\"",
+                    "}${0}"
+                  ],
+                  "description": "Add a text setting to schema"
+                }
+              }</code>
+            </pre>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-lg mb-2">
+              Snippet pour un paramètre d'image :
+            </h3>
+            <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm">
+              <code>{
+                "Image Setting": {
+                  "prefix": "imagesetting",
+                  "body": [
+                    "{",
+                    "  \"type\": \"image_picker\",",
+                    "  \"id\": \"${1:image_id}\",",
+                    "  \"label\": \"${2:Image Label}\"",
+                    "}${0}"
+                  ],
+                  "description": "Add an image picker setting to schema"
+                }
+              }</code>
+            </pre>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">
+              Snippet pour un paramètre de type range :
+            </h3>
+            <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm">
+              <code>{
+                "Range Setting": {
+                  "prefix": "rangesetting",
+                  "body": [
+                    "{",
+                    "  \"type\": \"range\",",
+                    "  \"id\": \"${1:range_id}\",",
+                    "  \"label\": \"${2:Range Label}\",",
+                    "  \"min\": ${3:0},",
+                    "  \"max\": ${4:100},",
+                    "  \"step\": ${5:1},",
+                    "  \"default\": ${6:50},",
+                    "  \"unit\": \"${7:px}\"",
+                    "}${0}"
+                  ],
+                  "description": "Add a range setting to schema"
+                }
+              }</code>
+            </pre>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">
+              Snippet pour un paramètre de type select :
+            </h3>
+            <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm">
+              <code>{
+                "Select Setting": {
+                  "prefix": "selectsetting",
+                  "body": [
+                    "{",
+                    "  \"type\": \"select\",",
+                    "  \"id\": \"${1:select_id}\",",
+                    "  \"label\": \"${2:Select Label}\",",
+                    "  \"options\": [",
+                    "    {",
+                    "      \"value\": \"${3:option1}\",",
+                    "      \"label\": \"${4:Option 1}\"",
+                    "    },",
+                    "    {",
+                    "      \"value\": \"${5:option2}\",",
+                    "      \"label\": \"${6:Option 2}\"",
+                    "    }",
+                    "  ],",
+                    "  \"default\": \"${7:$3}\"",
+                    "}${0}"
+                  ],
+                  "description": "Add a select setting to schema"
+                }
+              }</code>
+            </pre>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">
+              Snippet pour un paramètre de type color :
+            </h3>
+            <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm">
+              <code>{
+                "Color Setting": {
+                  "prefix": "colorsetting",
+                  "body": [
+                    "{",
+                    "  \"type\": \"color\",",
+                    "  \"id\": \"${1:color_id}\",",
+                    "  \"label\": \"${2:Color Label}\",",
+                    "  \"default\": \"${3:#000000}\"",
+                    "}${0}"
+                  ],
+                  "description": "Add a color setting to schema"
+                }
+              }</code>
+            </pre>
+          </div>
+        </div>
+        </div>
+
+        <p class="mt-4">
+          Pour utiliser ces snippets, tapez simplement le préfixe (par exemple,
+          "newsection") dans un fichier Liquid et appuyez sur Tab. Le snippet
+          s'expandera automatiquement, vous permettant de remplir rapidement les
+          champs nécessaires.
+        </p>
+      </section>
+    </main>
+
+    <footer class="bg-blue-600 text-white mt-8">
+      <div class="container mx-auto px-4 py-6 text-center">
+        <p>&copy; 2024 Votre Entreprise. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </body>
+</html>
